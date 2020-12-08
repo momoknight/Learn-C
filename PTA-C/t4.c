@@ -236,3 +236,23 @@ double factorial(int n)
 
     return fact;
 } */
+
+// 习题4-3 求分数序列前N项和
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    double numerator = 2.0, denominator = 1.0, sum = 0.0;
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++)
+    {
+        sum += numerator / denominator;
+        double temp = numerator;
+        numerator = numerator + denominator;
+        denominator = temp;
+    }
+    printf("%.2f", sum);
+
+    return 0;
+}
